@@ -1,0 +1,27 @@
+{
+  "name": "hairball",
+  "version": "0.0.1",
+  "description": "Sane global state management for client side JS apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests.js | tap-dot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smallhelm/hairball.git"
+  },
+  "keywords": [
+    "immutable",
+    "global",
+    "state"
+  ],
+  "author": "smallhelm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smallhelm/hairball/issues"
+  },
+  "devDependencies": {
+    "tap-dot": "1.0.0",
+    "tape": "4.0.0"
+  }
+}
