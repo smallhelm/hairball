@@ -20,35 +20,37 @@ module.exports = function(onChange){
       path = normalizePath(path);
       value = mori.toClj(value);
 
-      var i2 = path.length === 0 ? value : mori.assocIn(i, path, value);
+      var new_i = path.length === 0 ? value : mori.assocIn(i, path, value);
+      var old_i = i;
+      i = new_i;//mutate before calling onChange
       if(onChange){
-        onChange(i2, i, path, value);
+        onChange(new_i, old_i, path, value);
       }
-      i = i2;
-      return i2;
+      return new_i;
     },
     del: function(path){
       path = normalizePath(path);
 
       //because dissocIn currently isn't in mori
-      var i2;
+      var new_i;
       if(path.length === 0){
-        i2 = mori.hashMap();
+        new_i = mori.hashMap();
       }else{
         if(mori.getIn(i, path) == null){//good as gone
           return i;
         }
         var last_key = path.pop();
-        i2 = mori.updateIn(i, path, function(v){
+        new_i = mori.updateIn(i, path, function(v){
           return mori.dissoc(v, last_key);
         });
         path.push(last_key);//undo the mutation to path
       }
+      var old_i = i;
+      i = new_i;//mutate before calling onChange
       if(onChange){
-        onChange(i2, i, path);
+        onChange(new_i, old_i, path);
       }
-      i = i2;
-      return i2;
+      return new_i;
     }
   };
 };
