@@ -23,5 +23,9 @@
   "devDependencies": {
     "tap-dot": "1.0.0",
     "tape": "4.0.0"
+  },
+  "dependencies": {
+    "mori": "^0.3.2",
+    "x-is-array": "^0.1.0"
   }
 }
