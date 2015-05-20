@@ -1,6 +1,6 @@
 {
   "name": "hairball",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Sane global state management for client side JS apps",
   "main": "index.js",
   "scripts": {
