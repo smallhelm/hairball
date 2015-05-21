@@ -35,6 +35,8 @@ module.exports = function(onChange){
       var new_i;
       if(path.length === 0){
         new_i = mori.hashMap();
+      }else if(path.length === 1){
+        new_i = mori.dissoc(i, path[0]);
       }else{
         if(mori.getIn(i, path) == null){//good as gone
           return i;

@@ -23,6 +23,9 @@ test("get/put/del", function(t){
   hb.del(['some', 'nested']);
   t.deepEquals(mori.toJs(hb.get(['some'])), {});
 
+  hb.del(['some']);
+  t.deepEquals(mori.toJs(hb.get([])), {hello: 'world'});
+
   hb.del([]);
   t.deepEquals(mori.toJs(hb.get([])), {});
 
