@@ -10,7 +10,7 @@ module.exports = function(onChange){
 
   return {
     get: function(path){
-      path = normalizePath(path);
+      path = arguments.length === 0 ? [] : normalizePath(path);
       if(path.length === 0){
         return i;
       }
@@ -29,7 +29,7 @@ module.exports = function(onChange){
       return new_i;
     },
     del: function(path){
-      path = normalizePath(path);
+      path = arguments.length === 0 ? [] : normalizePath(path);
 
       //because dissocIn currently isn't in mori
       var new_i;

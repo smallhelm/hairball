@@ -24,10 +24,10 @@ test("get/put/del", function(t){
   t.deepEquals(mori.toJs(hb.get(['some'])), {});
 
   hb.del(['some']);
-  t.deepEquals(mori.toJs(hb.get([])), {hello: 'world'});
+  t.deepEquals(mori.toJs(hb.get()), {hello: 'world'});
 
-  hb.del([]);
-  t.deepEquals(mori.toJs(hb.get([])), {});
+  hb.del();
+  t.deepEquals(mori.toJs(hb.get()), {});
 
   t.end();
 });
