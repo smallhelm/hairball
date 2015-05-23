@@ -19,7 +19,7 @@ For reusable components (widgets). Just make them stateless. (Don't use cursors)
 
 ### What! No cursors!?!?
 
-They don't embrace the hairball. They try and hide what is really going on...
+They don't embrace the hairball. They try and hide what is really going on.
 
 ## Immutable data structures
 
@@ -49,8 +49,8 @@ var hb = Hairball(function(new_state, old_state, path, value){
 });
 ```
 
- * `new\_state` the new current state of the hairball
- * `old\_state` the previous state of the hairball, store this in a collection if you want to implement undo or something
+ * `new_state` the new current state of the hairball
+ * `old_state` the previous state of the hairball, store this in a collection if you want to implement undo or something
  * `path` the key path that was modified
  * `value` the value that was put in the hairball or undefined if deleted
 
